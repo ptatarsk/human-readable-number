@@ -13,7 +13,8 @@ module.exports = function toReadable (number) {
         result += ' ' + readable_numbers[number % 10];
   } else if (number > 99) {
     result = readable_numbers[Math.floor(number / 100)] + ' hundred';
-    if (number = Math.floor(number % 100)) {
+    if (number % 100) {
+        number = number % 100;
         if (number >= 20 && number <= 99) {
             result += ' ' + readable_numbers[Math.floor(number / 10) + 18];
             if (number % 10)
